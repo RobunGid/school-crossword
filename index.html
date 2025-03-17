@@ -6,6 +6,9 @@
 	<title>Кроссворд по химии</title>
 	<link rel="shortcut icon" href="logo.png" type="image/x-icon">
 	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
 		
@@ -31,16 +34,23 @@
 			<div>17. Состояние при котором волны колеблются синхронно: имеют одинаковую частоту и постоянную разность фаз</div>
 		</div>
 	</div>
-	<div id="convert-button-container">
-		<button id="convert-button">Конвертировать</button>
+	<div id="open-settings-container">
+		<button id="open-settings">Открыть/закрыть настройки</button>
+	</div>
+	<div id="settings-container" hidden>
+		<div id="convert-button-container">
+			<button id="convert-button">Конвертировать</button>
+		</div>
+		<div id="crossword-editor-container">
+			<form action="#" id="crossword-editor-form"></form>
+		</div>
+			
+		<div id="saved-game-data-container">
+			<textarea id="saved-game-data" cols="90" rows="20"></textarea>
+		</div>
 		<button id="clear-button">Очистить</button>
 		<button id="default-button">По умолчанию</button>
 	</div>
-	<div id="crossword-editor-container">
-		<form action="#" id="crossword-editor-form"></form>
-	</div>
-		
-	<textarea id="saved-game-data" cols="90" rows="20"></textarea>
 	<script src="script.js">
 	</script>
 </body>

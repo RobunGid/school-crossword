@@ -31,6 +31,8 @@ const clearButton = document.querySelector("#clear-button");
 const defaultButton = document.querySelector("#default-button");
 const saveGameDataContainer = document.querySelector("#saved-game-data");
 const questionsContainer = document.querySelector('#questions-container');
+const openSettingsButton = document.querySelector('#open-settings');
+const settingsContainer = document.querySelector('#settings-container');
 
 const rowCount = 20;
 const columnCount = 30;
@@ -144,4 +146,8 @@ defaultButton.addEventListener("click", () => {
 	localStorage.removeItem('questions');
 	localStorage.removeItem('gameCells');
 	location.reload();
+})
+
+openSettingsButton.addEventListener('click', () => {
+	settingsContainer.hidden = !settingsContainer.hidden;
 })

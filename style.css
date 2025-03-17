@@ -1,8 +1,5 @@
-@font-face {
+html, body {
 	font-family: 'Montserrat';
-	src: url('./static/Montserrat-Regular.ttf');
-	font-weight: normal;
-	font-style: normal;
 }
 
 .btn {
@@ -13,7 +10,6 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-family: 'Montserrat';
 	font-size: 20px;
 	transition: all 0.15s cubic-bezier(0.47, 0, 0.745, 0.715);
 	border-collapse: collapse;
@@ -101,4 +97,23 @@
 
 #saved-game-data {
 	border: 1px solid black;
+}
+
+#saved-game-data-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+}
+
+#open-settings-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#open-settings {
+	margin: 1rem;
+	height: 2.5rem;
+	width: 10rem;
 }
