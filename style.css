@@ -13,6 +13,7 @@ html, body {
 	font-size: 20px;
 	transition: all 0.15s cubic-bezier(0.47, 0, 0.745, 0.715);
 	border-collapse: collapse;
+	opacity: 1;
 }
 
 .active:not(.hidden) {
@@ -25,7 +26,7 @@ html, body {
 	}
 
 .hidden {
-	color: white;
+	color: transparent;
 	cursor: pointer;
 	user-select: none;
 }
