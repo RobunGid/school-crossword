@@ -28,7 +28,9 @@ const table = document.querySelector("#crossword-table");
 const crosswordEditorForm = document.querySelector("#crossword-editor-form");
 const convertButton = document.querySelector("#convert-button");
 const clearButton = document.querySelector("#clear-button");
+const defaultButton = document.querySelector("#default-button");
 const saveGameDataContainer = document.querySelector("#saved-game-data");
+const questionsContainer = document.querySelector('#questions-container');
 
 const rowCount = 20;
 const columnCount = 30;
@@ -95,6 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	changeCrosswordEditorData(gameCells);
 	saveGameDataContainer.value = JSON.stringify(gameCells);
+
+	if (localStorage.getItem('questions')) {
+		questionsContainer.innerHTML = JSON.parse(localStorage.getItem('questions'));
+	}
 })
 
 document.querySelector("#crossword-table").addEventListener('click', (event) => {
@@ -113,8 +119,10 @@ clearButton.addEventListener('click', () => {
 	const inputs = document.querySelectorAll('.cell-input');
 	inputs.forEach(input => input.value = '');
 	localStorage.setItem('gameCells', JSON.stringify([]));
+	localStorage.setItem('questions', JSON.stringify(""));
 	createCrossword([]);
-	saveGameDataContainer.value = "[]";
+	saveGameDataContainer.value = '[]';
+	questionsContainer.innerHTML = '<div>1.</div>';
 })
 
 crosswordEditorForm.addEventListener('change', () => {
@@ -126,4 +134,14 @@ crosswordEditorForm.addEventListener('change', () => {
 saveGameDataContainer.addEventListener('input', (event) => {
 	const gameCells = JSON.parse(event.target.value);
 	localStorage.setItem('gameCells', JSON.stringify(gameCells));
+})
+
+questionsContainer.addEventListener('input', (event) => {
+	localStorage.setItem('questions', JSON.stringify(event.target.innerHTML));
+})
+
+defaultButton.addEventListener("click", () => {
+	localStorage.removeItem('questions');
+	localStorage.removeItem('gameCells');
+	location.reload();
 })
